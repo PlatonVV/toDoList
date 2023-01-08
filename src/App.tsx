@@ -1,31 +1,25 @@
 import React from "react";
 import "./App.css";
-import { ToDoList } from "./ToDoList";
+import { TasksType, ToDoList } from "./ToDoList";
 
 function App() {
-  const shapka = "What to learn";
-
-  const tasks1 = [
-    { id: 1, title: "HTML&CSS", isDone: true },
+  let tasks1: Array<TasksType> = [
+    { id: 1, title: "CSS", isDone: true },
     { id: 2, title: "JS", isDone: true },
-    { id: 3, title: "ReactJS", isDone: false },
+    { id: 3, title: "React", isDone: false },
   ];
-  const tasks2 = [
-    { id: 1, title: "Hello world", isDone: true },
-    { id: 2, title: "I am Happy", isDone: false },
-    { id: 3, title: "Yo", isDone: false },
-    { id: 2, title: "I am Happy", isDone: false },
-    { id: 3, title: "Yo", isDone: false },
+  let tasks2: Array<TasksType> = [
+    { id: 1, title: "USD", isDone: true },
+    { id: 2, title: "RUB", isDone: false },
+    { id: 3, title: "EURO", isDone: false },
   ];
 
   return (
     <div className="App">
-      <ToDoList shapka={shapka} tasks={tasks1} />
-      <ToDoList shapka={"Next to learn!"} tasks={tasks2} />
+      <ToDoList title="What to learn?" tasks={tasks1} />
+      <ToDoList title="React to learn!" tasks={tasks2} />
     </div>
   );
 }
-
-//first
 
 export default App;
