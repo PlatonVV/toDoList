@@ -3,21 +3,23 @@ import "./App.css";
 import { TasksType, ToDoList } from "./ToDoList";
 
 function App() {
-  let tasks1: Array<TasksType> = [
+  const tasks: Array<TasksType> = [
     { id: 1, title: "CSS", isDone: true },
     { id: 2, title: "JS", isDone: true },
     { id: 3, title: "React", isDone: false },
+    { id: 4, title: "Redux", isDone: false },
   ];
-  let tasks2: Array<TasksType> = [
-    { id: 1, title: "USD", isDone: true },
-    { id: 2, title: "RUB", isDone: false },
-    { id: 3, title: "EURO", isDone: false },
-  ];
+
+  function removeTask(id: number) {
+    let resultTasks = tasks.filter(() => {
+      return true;
+    });
+    console.log(resultTasks);
+  }
 
   return (
     <div className="App">
-      <ToDoList title="What to learn?" tasks={tasks1} />
-      <ToDoList title="React to learn!" tasks={tasks2} />
+      <ToDoList title="What to learn?" tasks={tasks} removeTask={removeTask} />
     </div>
   );
 }
